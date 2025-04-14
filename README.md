@@ -1,101 +1,113 @@
-# Financial Wallet API
+# 💰 Financial Wallet API
 
-A financial wallet API built with NestJS, TypeScript, and Clean Architecture principles.
+A robust and secure financial wallet API built with **NestJS**, **TypeScript**, and following **Clean Architecture** principles.
 
-## Features
+---
 
-- User registration and authentication
-- Wallet management
-- Money transfers between users
-- Transaction history
-- Transaction reversal
-- Security and validation
+## 🚀 Features
 
-## Architecture
+- ✅ User registration and authentication  
+- 💼 Wallet management  
+- 💸 Money transfers between users  
+- 📜 Transaction history  
+- 🔁 Transaction reversal  
+- 🔒 Security and validation  
 
-This project follows Clean Architecture principles with three main layers:
+---
 
-- **Domain Layer**: Entities, DTOs, and repository interfaces
-- **Core Layer**: Use cases and business logic
-- **Infrastructure Layer**: Controllers, repositories, and external services
+## 🏗️ Architecture
 
-## Prerequisites
+This project follows the **Clean Architecture** pattern, divided into three main layers:
 
-- Node.js (v16+)
-- PostgreSQL
-- Docker and Docker Compose (optional)
+- **Domain Layer**  
+  Entities, repository interfaces, and core types  
+- **Core Layer**  
+  Use cases and business logic  
+- **Infrastructure Layer**  
+  Controllers, repositories, and external service integrations  
 
-## Installation
+---
 
-### Using Docker
+## ⚙️ Prerequisites
 
-1. Clone the repository
-2. Copy the environment file:
-   \`\`\`bash
-   cp .env.example .env
-   \`\`\`
-3. Update the environment variables if needed
-4. Start the containers:
-   \`\`\`bash
-   docker-compose up -d
-   \`\`\`
+- [Node.js](https://nodejs.org/) (v16 or higher)  
+- [PostgreSQL](https://www.postgresql.org/)  
+- [Docker & Docker Compose](https://www.docker.com/) (optional)
 
-### Manual Installation
+---
 
-1. Clone the repository
-2. Install dependencies:
-   \`\`\`bash
-   npm install
-   \`\`\`
-3. Copy the environment file:
-   \`\`\`bash
-   cp .env.example .env
-   \`\`\`
-4. Update the environment variables
-5. Start the application:
-   \`\`\`bash
-   npm run start:dev
-   \`\`\`
+## 🛠️ Installation
 
-## API Documentation
+### 🔁 Using Docker
 
-Once the application is running, you can access the Swagger documentation at:
+```bash
+# 1. Clone the repository
+git clone https://github.com/seu-usuario/financial-wallet-api.git
+cd financial-wallet-api
 
-\`\`\`
-http://localhost:3000/api/docs
-\`\`\`
+# 2. Copy the environment file
+cp .env.example .env
 
-## API Endpoints
+# 3. Update environment variables (if needed)
 
-### Authentication
-- `POST /auth/login` - User login
+# 4. Start the containers
+docker-compose up -d
 
-### Users
-- `POST /users` - Create a new user
-- `GET /users/me` - Get current user profile
+⚙️ Manual Installation
+bash
+Copiar
+Editar
+# 1. Clone the repository
+git clone https://github.com/seu-usuario/financial-wallet-api.git
+cd financial-wallet-api
 
-### Wallets
-- `GET /wallets/me` - Get current user wallet
+# 2. Install dependencies
+npm install
 
-### Transactions
-- `POST /transactions` - Create a new transaction
-- `POST /transactions/reverse` - Reverse a transaction
-- `GET /transactions` - Get user transactions
+# 3. Copy the environment file
+cp .env.example .env
 
-## Testing
+# 4. Update environment variables
 
-Run the tests with:
+# 5. Start the application
+npm run start:dev
 
-\`\`\`bash
+📚 API Documentation
+Once the server is running, access the Swagger UI:
+
+👉 http://localhost:3000/api/docs
+
+🔌 API Endpoints
+🔐 Authentication
+POST /auth/login – User login
+
+👤 Users
+POST /users – Create a new user
+
+GET /users/me – Get current user profile
+
+💳 Wallets
+GET /wallets/me – Get current user's wallet
+
+💱 Transactions
+POST /transactions – Create a new transaction
+
+POST /transactions/reverse – Reverse a transaction
+
+GET /transactions – List all transactions for the user
+
+🧪 Testing
+Run unit tests:
+
+bash
+Copiar
+Editar
 npm test
-\`\`\`
+Check test coverage:
 
-For test coverage:
-
-\`\`\`bash
+bash
+Copiar
+Editar
 npm run test:cov
-\`\`\`
-
-## License
 
 This project is licensed under the MIT License.
