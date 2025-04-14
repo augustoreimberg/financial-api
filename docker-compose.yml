@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: financial-wallet-api
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - financial-wallet-network
+
+  postgres:
+    image: postgres:14-alpine
+    container_name: financial-wallet-postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: financial_wallet
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - financial-wallet-network
+
+networks:
+  financial-wallet-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
